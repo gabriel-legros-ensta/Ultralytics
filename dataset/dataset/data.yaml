@@ -1,0 +1,13 @@
+train: /home/l/legros/dataset/dataset/train/images
+val: /home/l/legros/dataset/dataset/valid/images
+test: /home/l/legros/dataset/dataset/test/images
+
+nc: 1
+names: ['ball-handler']
+
+roboflow:
+  workspace: james-skelton
+  project: ballhandler-basketball
+  version: 11
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/james-skelton/ballhandler-basketball/dataset/11

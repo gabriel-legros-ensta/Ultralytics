@@ -1,0 +1,13 @@
+train: /home/l/legros/dataset2/train/images
+val: /home/l/legros/dataset2/valid/images
+test: /home/l/legros/dataset2/test/images
+
+nc: 1
+names: ['ball-handler']
+
+roboflow:
+  workspace: gaddy-radom-vofgh
+  project: ball_handler
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/gaddy-radom-vofgh/ball_handler/dataset/2
