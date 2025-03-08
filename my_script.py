@@ -13,8 +13,8 @@ import torch
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 # Open video
-video_path = 'path_to_video.mp4' 
-cap = cv2.VideoCapture(video_path)
+#video_path = 'basket.mp4' 
+#cap = cv2.VideoCapture(video_path)
 
 # Load a model
 model = YOLO("yolo11n.pt").to(device)
@@ -22,7 +22,7 @@ print(f"Modèle chargé sur : {device}")
 
 """# **Entrainement**"""
 
-#model.train(data="dataset2/data.yaml", epochs=150, cache=True, device="cuda", batch=32, imgsz=640, patience=15)
+model.train(data="dataset3/data.yaml", epochs=200, cache=True, device="cuda", batch=32, imgsz=640, patience=20)
 #device="cuda"
 
 """# **Validation**"""
@@ -32,10 +32,10 @@ model = YOLO('runs/detect/train/weights/best.pt').to(device)
 print(f"Modèle chargé sur : {device}")
 
 # Effectuer l'évaluation sur le jeu de validation
-metrics = model.val(data="dataset/dataset/data.yaml", imgsz=640, batch=32, device=device)
+#metrics = model.val(data="dataset/dataset/data.yaml", imgsz=640, batch=32, device=device)
 
 # Afficher les résultats des métriques
-print(metrics)
+#print(metrics)
 
 """# **Fine-Tune**"""
 #!yolo task=detect mode=train model='runs/detect/train2/weights/best.pt' data='dataset2/data.yaml' imgsz=640 epochs=100 batch=32 lr0=0.01 device="cuda" optimizer='Adam' cache_images=True patience=15
@@ -70,13 +70,10 @@ while cap.isOpened():
     out.write(annotated_frame_bgr)
 
     # Afficher la vidéo (optionnel)
-    cv2.imshow('Frame', annotated_frame_bgr)
+    #cv2.imshow('Frame', annotated_frame_bgr)
 
-    # Quitter la vidéo avec la touche 'q'
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
 
 # Libérer les ressources
 cap.release()
 out.release()
-cv2.destroyAllWindows()
+#cv2.destroyAllWindows()
