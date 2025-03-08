@@ -13,22 +13,22 @@ import torch
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 # Open video
-#video_path = 'basket.mp4' 
-#cap = cv2.VideoCapture(video_path)
+video_path = 'basket.mp4' 
+cap = cv2.VideoCapture(video_path)
 
 # Load a model
-model = YOLO("yolo11n.pt").to(device)
+#model = YOLO("yolo11n.pt").to(device)
 print(f"Modèle chargé sur : {device}")
 
 """# **Entrainement**"""
 
-model.train(data="dataset3/data.yaml", epochs=200, cache=True, device="cuda", batch=32, imgsz=640, patience=20)
+#model.train(data="dataset3/data.yaml", epochs=200, cache=True, device="cuda", batch=32, imgsz=640, patience=20)
 #device="cuda"
 
 """# **Validation**"""
 
 # Charger le modèle entraîné
-model = YOLO('runs/detect/train/weights/best.pt').to(device)
+model = YOLO('runs/detect/train5/weights/best.pt').to(device)
 print(f"Modèle chargé sur : {device}")
 
 # Effectuer l'évaluation sur le jeu de validation

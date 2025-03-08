@@ -1,0 +1,13 @@
+train: /home/l/legros/Ultralytics/dataset3/train/images
+val: /home/l/legros/Ultralytics/dataset3/valid/images
+test: /home/l/legros/Ultralytics/dataset3/test/images
+
+nc: 1
+names: ['ball_handler']
+
+roboflow:
+  workspace: pie-3seaw
+  project: my-first-project-b40hq
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/pie-3seaw/my-first-project-b40hq/dataset/3
